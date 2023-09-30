@@ -17,4 +17,3 @@
 
 <p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=mohamed0yaser&show_icons=true&locale=en&layout=compact" alt="mohamed0yaser" /></p>
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=mohamed0yaser&" alt="mohamed0yaser" /></p>
