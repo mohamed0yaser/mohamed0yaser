@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -42,6 +44,7 @@
         <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
         <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
         <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a></li>
+        <li><a href="index.html#lessons"><i class="bi bi-book navicon"></i><span>Lessons</span></a></li>
         <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
       </ul>
     </nav>
@@ -61,7 +64,8 @@
         </nav>
         <h1>Blog App Details</h1>
       </div>
-    </div><!-- End Page Title -->
+    </div>
+    <!-- End Page Title -->
 
     <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">
@@ -69,200 +73,195 @@
       <div class="container" data-aos="fade-up">
 
         <div class="portfolio-details-slider swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              
-              "slidesPerView": "auto", 
-              
-            "centeredSlides": true,
-              "navigation": {
-                "nextEl": ".swiper-button-next",
-                "prevEl": ".swiper-button-prev"
-              },
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
-          <div class="swiper-wrapper justify-content-center align-items-center" >
-<div class="swiper-slide">
-  <img src="assets/img/portfolio/app1-image5.jpeg" alt=""
-    style="width:25%; height:650px;">
-</div>
-<div class="swiper-slide">
-  <img src="assets/img/portfolio/app1-image6.jpeg" alt=""
-    style="width:25%; height:650px;">
-</div>
-<div class="swiper-slide">
-  <img src="assets/img/portfolio/app1-image1.jpeg" alt=""
-    style="width:25%; height:650px; ">
-</div>
-<div class="swiper-slide">
-  <img src="assets/img/portfolio/app1-image2.jpeg" alt=""
-    style="width:25%; height:650px; ">
-</div>
-<div class="swiper-slide">
-  <img src="assets/img/portfolio/app1-image3.jpeg" alt=""
-    style="width:25%; height:650px;">
-</div>
-<div class="swiper-slide">
-  <img src="assets/img/portfolio/app1-image4.jpeg" alt=""
-    style="width:25%; height:650px;">
-</div>
-
-
-          </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-pagination"></div>
+              <script type="application/json" class="swiper-config">
+                      {
+                        "loop": true,
+                        "speed": 600,
+                        "autoplay": { "delay": 5000 },
+                        "slidesPerView": 1,
+                        "centeredSlides": true,
+                        "navigation": {
+                          "nextEl": ".swiper-button-next",
+                          "prevEl": ".swiper-button-prev"
+                        },
+                        "pagination": {
+                          "el": ".swiper-pagination",
+                          "type": "bullets",
+                          "clickable": true
+                        }
+                      }
+                    </script>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/app1-image5.jpeg" alt>
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/app1-image6.jpeg" alt>
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/app1-image1.jpeg" alt>
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/app1-image2.jpeg" alt>
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/app1-image3.jpeg" alt>
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/app1-image4.jpeg" alt>
+                </div>
+              </div>
+              <div>
+              <!-- Navigation -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-pagination"></div>
+              </div>
         </div>
 
-    <div class="row justify-content-between gy-5 mt-5">
-    
-      <!-- Left Section -->
-      <div class="col-lg-8" data-aos="fade-up">
-        <div class="portfolio-description">
-    
-          <h2 class="fw-bold mb-4">Blog Application</h2>
-    
-          <p class="fs-5 mb-5">
-            A <strong>Flutter-powered blog application</strong> built with <strong>Supabase</strong> as the backend.
-            The app allows users to seamlessly <strong>create</strong>, <strong>read</strong>, and <strong>manage blog
-              posts</strong>
-            while showcasing <strong>clean UI/UX</strong>, <strong>real-time data handling</strong>, and <strong>secure
-              authentication</strong>.
-          </p>
-    
-          <!-- Features -->
-          <h3 class="fw-semibold mb-4">Features</h3>
-          <div class="row g-4 mb-5">
-            <div class="col-md-6 d-flex align-items-start">
-              <i class="bi bi-shield-lock text-primary fs-3 me-3"></i>
-              <div>
-                <h5 class="mb-1">Authentication</h5>
-                <p class="mb-0 text-muted">User sign up, login, and logout powered by Supabase Auth.</p>
+        <div class="row justify-content-between gy-5 mt-5">
+
+          <!-- Left Section -->
+          <div class="col-lg-8" data-aos="fade-up">
+            <div class="portfolio-description">
+
+              <h2 class="fw-bold mb-4">Blog Application</h2>
+
+              <p class="fs-5 mb-5">
+                A <strong>Flutter-powered blog application</strong> built with <strong>Supabase</strong> as the backend.
+                The app allows users to seamlessly <strong>create</strong>, <strong>read</strong>, and <strong>manage
+                  blog
+                  posts</strong>
+                while showcasing <strong>clean UI/UX</strong>, <strong>real-time data handling</strong>, and
+                <strong>secure
+                  authentication</strong>.
+              </p>
+
+              <!-- Features -->
+              <h3 class="fw-semibold mb-4">Features</h3>
+              <div class="row g-4 mb-5">
+                <div class="col-md-6 d-flex align-items-start">
+                  <i class="bi bi-shield-lock text-primary fs-3 me-3"></i>
+                  <div>
+                    <h5 class="mb-1">Authentication</h5>
+                    <p class="mb-0 text-muted">User sign up, login, and logout powered by Supabase Auth.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-flex align-items-start">
+                  <i class="bi bi-pencil-square text-primary fs-3 me-3"></i>
+                  <div>
+                    <h5 class="mb-1">Blog Creation</h5>
+                    <p class="mb-0 text-muted">Write and publish blog posts with image support.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-flex align-items-start">
+                  <i class="bi bi-arrow-repeat text-primary fs-3 me-3"></i>
+                  <div>
+                    <h5 class="mb-1">Real-time Database</h5>
+                    <p class="mb-0 text-muted">Posts update instantly with Supabase PostgreSQL.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-flex align-items-start">
+                  <i class="bi bi-phone text-primary fs-3 me-3"></i>
+                  <div>
+                    <h5 class="mb-1">Responsive UI</h5>
+                    <p class="mb-0 text-muted">Optimized design across mobile, web, and tablet.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-flex align-items-start">
+                  <i class="bi bi-diagram-3 text-primary fs-3 me-3"></i>
+                  <div>
+                    <h5 class="mb-1">State Management</h5>
+                    <p class="mb-0 text-muted">Bloc & Cubit ensure scalable architecture.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-flex align-items-start">
+                  <i class="bi bi-image text-primary fs-3 me-3"></i>
+                  <div>
+                    <h5 class="mb-1">Image Uploads</h5>
+                    <p class="mb-0 text-muted">Integrated with Supabase Storage for media handling.</p>
+                  </div>
+                </div>
               </div>
-            </div>
-    
-            <div class="col-md-6 d-flex align-items-start">
-              <i class="bi bi-pencil-square text-primary fs-3 me-3"></i>
-              <div>
-                <h5 class="mb-1">Blog Creation</h5>
-                <p class="mb-0 text-muted">Write and publish blog posts with image support.</p>
+
+              <!-- Tech Stack -->
+              <h3 class="fw-semibold mb-4">Tech Stack</h3>
+              <div class="row g-4 mb-5">
+                <div class="col-md-6 d-flex align-items-start">
+                  <i class="bi bi-code-slash text-success fs-3 me-3"></i>
+                  <div>
+                    <h5 class="mb-1">Flutter (Dart)</h5>
+                    <p class="mb-0 text-muted">Cross-platform frontend framework</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-flex align-items-start">
+                  <i class="bi bi-hdd-network text-success fs-3 me-3"></i>
+                  <div>
+                    <h5 class="mb-1">Supabase</h5>
+                    <p class="mb-0 text-muted">Backend services & PostgreSQL database</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-flex align-items-start">
+                  <i class="bi bi-diagram-2 text-success fs-3 me-3"></i>
+                  <div>
+                    <h5 class="mb-1">Bloc & Cubit</h5>
+                    <p class="mb-0 text-muted">Robust state management solution</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-flex align-items-start">
+                  <i class="bi bi-github text-success fs-3 me-3"></i>
+                  <div>
+                    <h5 class="mb-1">GitHub</h5>
+                    <p class="mb-0 text-muted">Version control & CI/CD pipelines</p>
+                  </div>
+                </div>
               </div>
-            </div>
-    
-            <div class="col-md-6 d-flex align-items-start">
-              <i class="bi bi-arrow-repeat text-primary fs-3 me-3"></i>
-              <div>
-                <h5 class="mb-1">Real-time Database</h5>
-                <p class="mb-0 text-muted">Posts update instantly with Supabase PostgreSQL.</p>
-              </div>
-            </div>
-    
-            <div class="col-md-6 d-flex align-items-start">
-              <i class="bi bi-phone text-primary fs-3 me-3"></i>
-              <div>
-                <h5 class="mb-1">Responsive UI</h5>
-                <p class="mb-0 text-muted">Optimized design across mobile, web, and tablet.</p>
-              </div>
-            </div>
-    
-            <div class="col-md-6 d-flex align-items-start">
-              <i class="bi bi-diagram-3 text-primary fs-3 me-3"></i>
-              <div>
-                <h5 class="mb-1">State Management</h5>
-                <p class="mb-0 text-muted">Bloc & Cubit ensure scalable architecture.</p>
-              </div>
-            </div>
-    
-            <div class="col-md-6 d-flex align-items-start">
-              <i class="bi bi-image text-primary fs-3 me-3"></i>
-              <div>
-                <h5 class="mb-1">Image Uploads</h5>
-                <p class="mb-0 text-muted">Integrated with Supabase Storage for media handling.</p>
-              </div>
+
+              <!-- Goals -->
+              <h3 class="fw-semibold mb-3">Project Goals</h3>
+              <p class="fs-5 mb-4">
+                This project demonstrates my ability to build <strong>full-stack Flutter apps</strong> with a
+                <strong>scalable architecture</strong>, integrate real-time backends, and deliver a
+                <strong>smooth cross-platform experience</strong>.
+              </p>
+
+              <!-- Quote -->
+              <blockquote class="blockquote border-start border-4 ps-3">
+                <p class="fs-5 mb-0">
+                  <i class="bi bi-quote text-primary"></i>
+                  This application reflects my passion for combining <strong>modern backend technologies</strong>
+                  with <strong>beautiful Flutter UI</strong> while following clean architecture principles.
+                </p>
+              </blockquote>
+
             </div>
           </div>
-    
-          <!-- Tech Stack -->
-          <h3 class="fw-semibold mb-4">Tech Stack</h3>
-          <div class="row g-4 mb-5">
-            <div class="col-md-6 d-flex align-items-start">
-              <i class="bi bi-code-slash text-success fs-3 me-3"></i>
-              <div>
-                <h5 class="mb-1">Flutter (Dart)</h5>
-                <p class="mb-0 text-muted">Cross-platform frontend framework</p>
-              </div>
-            </div>
-    
-            <div class="col-md-6 d-flex align-items-start">
-              <i class="bi bi-hdd-network text-success fs-3 me-3"></i>
-              <div>
-                <h5 class="mb-1">Supabase</h5>
-                <p class="mb-0 text-muted">Backend services & PostgreSQL database</p>
-              </div>
-            </div>
-    
-            <div class="col-md-6 d-flex align-items-start">
-              <i class="bi bi-diagram-2 text-success fs-3 me-3"></i>
-              <div>
-                <h5 class="mb-1">Bloc & Cubit</h5>
-                <p class="mb-0 text-muted">Robust state management solution</p>
-              </div>
-            </div>
-    
-            <div class="col-md-6 d-flex align-items-start">
-              <i class="bi bi-github text-success fs-3 me-3"></i>
-              <div>
-                <h5 class="mb-1">GitHub</h5>
-                <p class="mb-0 text-muted">Version control & CI/CD pipelines</p>
-              </div>
+
+          <!-- Right Section -->
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-info p-4 shadow-sm rounded">
+              <h3 class="fw-bold mb-3">Project Information</h3>
+              <ul class="list-unstyled fs-6">
+                <li class="mb-3"><i class="bi bi-grid-1x2 me-2 text-primary"></i> <strong>Category:</strong> Mobile
+                  Application
+                </li>
+                <li class="mb-3"><i class="bi bi-calendar3 me-2 text-primary"></i> <strong>Date:</strong> 01 Feb, 2025
+                </li>
+                <li><a href="https://github.com/mohamed0yaser/blog_application" class="btn btn-primary w-100">
+                    <i class="bi bi-github me-2"></i> View Source Code</a></li>
+              </ul>
             </div>
           </div>
-    
-          <!-- Goals -->
-          <h3 class="fw-semibold mb-3">Project Goals</h3>
-          <p class="fs-5 mb-4">
-            This project demonstrates my ability to build <strong>full-stack Flutter apps</strong> with a
-            <strong>scalable architecture</strong>, integrate real-time backends, and deliver a
-            <strong>smooth cross-platform experience</strong>.
-          </p>
-    
-          <!-- Quote -->
-          <blockquote class="blockquote border-start border-4 ps-3">
-            <p class="fs-5 mb-0">
-              <i class="bi bi-quote text-primary"></i>
-              This application reflects my passion for combining <strong>modern backend technologies</strong>
-              with <strong>beautiful Flutter UI</strong> while following clean architecture principles.
-            </p>
-          </blockquote>
-    
+
         </div>
-      </div>
-    
-      <!-- Right Section -->
-      <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-        <div class="portfolio-info p-4 shadow-sm rounded">
-          <h3 class="fw-bold mb-3">Project Information</h3>
-          <ul class="list-unstyled fs-6">
-            <li class="mb-3"><i class="bi bi-grid-1x2 me-2 text-primary"></i> <strong>Category:</strong> Mobile Application
-            </li>
-            <li class="mb-3"><i class="bi bi-calendar3 me-2 text-primary"></i> <strong>Date:</strong> 01 Feb, 2025</li>
-            <li><a href="https://github.com/mohamed0yaser/blog_application" class="btn btn-primary w-100">
-                <i class="bi bi-github me-2"></i> View Source Code</a></li>
-          </ul>
-        </div>
-      </div>
-    
-    </div>
 
 
 
@@ -282,19 +281,21 @@
         <a href="https://api.whatsapp.com/send/?phone=%2B201092833551&text&type=phone_number&app_absent=0"
           target="_blank"><i class="bi bi-whatsapp"></i></a>
         <a href="https://medium.com/@mohamedyaser2023" target="_blank"><i class="bi bi-medium"></i></a>
-        <a href="https://www.linkedin.com/in/mohamed-yaser-2141a21b2/" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/mohamed-yaser-2141a21b2/" target="_blank"><i
+            class="bi bi-linkedin"></i></a>
       </div>
       <div class="container">
         <div class="copyright">
           <span>Copyright</span> <strong class="px-1 sitename">MYR</strong> <span>All Rights Reserved</span>
         </div>
-  
+
       </div>
     </div>
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
