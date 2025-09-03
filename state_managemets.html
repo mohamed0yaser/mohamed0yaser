@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Advanced Flutter State Management Tutorial</title>
+    <meta content="Advanced Flutter State Management Tutorial - Provider, Riverpod, Bloc, Redux, GetX, MobX"
+        name="description">
+    <meta content="Flutter, State Management, Provider, Riverpod, Bloc, Redux, GetX, MobX, Tutorial" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+        pre {
+            background: #1e1e1e;
+            color: #dcdcdc;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .lesson-section {
+            margin-bottom: 50px;
+        }
+
+        .lesson-section h3 {
+            margin-top: 20px;
+            font-weight: 700;
+            color: #37517e;
+        }
+
+        .lesson-section p {
+            margin: 10px 0;
+        }
+
+        .lesson-section ul {
+            margin: 10px 0 20px 20px;
+        }
+
+        .lesson-section ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body class="service-details-page">
+
+    <header id="header" class="header d-flex flex-column justify-content-center">
+        <i class="header-toggle d-xl-none bi bi-list"></i>
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="#intro" class="active"><i class="bi bi-house navicon"></i><span>Intro</span></a></li>
+                <li><a href="#provider"><i class="bi bi-diagram-2 navicon"></i><span>Provider</span></a></li>
+                <li><a href="#riverpod"><i class="bi bi-water navicon"></i><span>Riverpod</span></a></li>
+                <li><a href="#bloc"><i class="bi bi-columns-gap navicon"></i><span>Bloc</span></a></li>
+                <li><a href="#redux"><i class="bi bi-diagram-3 navicon"></i><span>Redux</span></a></li>
+                <li><a href="#getx"><i class="bi bi-lightning-charge navicon"></i><span>GetX</span></a></li>
+                <li><a href="#mobx"><i class="bi bi-boxes navicon"></i><span>MobX</span></a></li>
+                <li><a href="#comparison"><i class="bi bi-bar-chart-line navicon"></i><span>Comparison</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <!-- Page Title -->
+        <div class="page-title" data-aos="fade">
+            <div class="container">
+                <h1>Advanced Flutter State Management</h1>
+                <p>Learn, Compare and Master State Management Solutions in Flutter 🚀</p>
+            </div>
+        </div>
+
+        <!-- Tutorial Section -->
+        <section id="service-details" class="service-details section">
+            <div class="container">
+
+                <!-- Intro -->
+                <div id="intro" class="lesson-section" data-aos="fade-up">
+                    <h3>Introduction</h3>
+                    <p>In Flutter, <strong>state management</strong> is one of the most important concepts to master for
+                        building
+                        scalable apps. Different projects have different needs, so multiple solutions exist.</p>
+                    <ul>
+                        <li><strong>Provider</strong> → simple, recommended by Flutter team.</li>
+                        <li><strong>Riverpod</strong> → modern replacement of Provider, more powerful.</li>
+                        <li><strong>Bloc</strong> → strict event-driven architecture, great for large apps.</li>
+                        <li><strong>Redux</strong> → predictable state container, inspired by React.</li>
+                        <li><strong>GetX</strong> → lightweight, fast, reactive.</li>
+                        <li><strong>MobX</strong> → reactive state management using observables.</li>
+                    </ul>
+                </div>
+
+                <!-- Provider -->
+                <div id="provider" class="lesson-section" data-aos="fade-up">
+                    <h3>Lesson 1: Provider (Advanced Usage)</h3>
+                    <p><strong>Provider</strong> is the most common and official solution for state management in
+                        Flutter. It
+                        allows dependency injection + reactive UI updates.</p>
+                    <h5>Example: Counter with Provider</h5>
+                    <pre><code class="language-dart">
+class Counter with ChangeNotifier {
+  int value = 0;
+
+  void increment() {
+    value++;
+    notifyListeners(); // UI will update
+  }
+}
+
+// main.dart
+void main() {
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => Counter(),
+      child: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final counter = Provider.of<Counter>(context);
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Text("Value: ${counter.value}"),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: counter.increment,
+          child: Icon(Icons.add),
+        ),
+      ),
+    );
+  }
+}
+          </code></pre>
+                    <p><strong>Best practices:</strong></p>
+                    <ul>
+                        <li>Use <code>ChangeNotifierProvider</code> for mutable state.</li>
+                        <li>Wrap only the widget tree that needs the provider.</li>
+                        <li>Avoid large ChangeNotifiers → split into multiple classes.</li>
+                    </ul>
+                </div>
+
+                <!-- Riverpod -->
+                <div id="riverpod" class="lesson-section" data-aos="fade-up">
+                    <h3>Lesson 2: Riverpod</h3>
+                    <p><strong>Riverpod</strong> is a modern and improved state management library that fixes
+                        limitations of
+                        Provider. It's compile-safe, testable, and flexible.</p>
+                    <pre><code class="language-dart">
+// Define a provider
+final counterProvider = StateProvider<int>((ref) => 0);
+
+// Use in UI
+Consumer(
+  builder: (context, ref, _) {
+    final counter = ref.watch(counterProvider);
+    return Text("Value: $counter");
+  },
+);
+
+// Increment
+ref.read(counterProvider.notifier).state++;
+          </code></pre>
+                </div>
+
+                <!-- Bloc -->
+                <div id="bloc" class="lesson-section" data-aos="fade-up">
+                    <h3>Lesson 3: Bloc</h3>
+                    <p><strong>Bloc</strong> (Business Logic Component) uses events and states for a predictable
+                        architecture.
+                    </p>
+                    <pre><code class="language-dart">
+class CounterEvent {}
+class Increment extends CounterEvent {}
+
+class CounterBloc extends Bloc<CounterEvent, int> {
+  CounterBloc() : super(0) {
+    on<Increment>((event, emit) => emit(state + 1));
+  }
+}
+
+// Usage
+BlocProvider(
+  create: (_) => CounterBloc(),
+  child: BlocBuilder<CounterBloc, int>(
+    builder: (context, count) => Text("$count"),
+  ),
+);
+          </code></pre>
+                </div>
+
+                <!-- Redux -->
+                <div id="redux" class="lesson-section" data-aos="fade-up">
+                    <h3>Lesson 4: Redux</h3>
+                    <p><strong>Redux</strong> uses a global store + reducers to manage state.</p>
+                    <pre><code class="language-dart">
+class IncrementAction {}
+
+int counterReducer(int state, dynamic action) {
+  if (action is IncrementAction) return state + 1;
+  return state;
+}
+
+final store = Store<int>(counterReducer, initialState: 0);
+          </code></pre>
+                </div>
+
+                <!-- GetX -->
+                <div id="getx" class="lesson-section" data-aos="fade-up">
+                    <h3>Lesson 5: GetX</h3>
+                    <p><strong>GetX</strong> is a simple and powerful reactive state management solution.</p>
+                    <pre><code class="language-dart">
+class CounterController extends GetxController {
+  var count = 0.obs;
+  void increment() => count++;
+}
+
+// Usage in UI
+final controller = Get.put(CounterController());
+Obx(() => Text("${controller.count}"));
+          </code></pre>
+                </div>
+
+                <!-- MobX -->
+                <div id="mobx" class="lesson-section" data-aos="fade-up">
+                    <h3>Lesson 6: MobX</h3>
+                    <p><strong>MobX</strong> uses observables and reactions for reactive programming.</p>
+                    <pre><code class="language-dart">
+class Counter = _Counter with _$Counter;
+
+abstract class _Counter with Store {
+  @observable
+  int value = 0;
+
+  @action
+  void increment() => value++;
+}
+          </code></pre>
+                </div>
+
+                <!-- Comparison -->
+                <div id="comparison" class="lesson-section" data-aos="fade-up">
+                    <h3>Lesson 7: Comparison & When to Use Which?</h3>
+                    <ul>
+                        <li><strong>Provider</strong> → Small to medium apps, official support.</li>
+                        <li><strong>Riverpod</strong> → Modern, scalable, null-safe, good for any size.</li>
+                        <li><strong>Bloc</strong> → Enterprise apps, team projects, strict architecture.</li>
+                        <li><strong>Redux</strong> → If you come from React/Redux world.</li>
+                        <li><strong>GetX</strong> → Quick MVPs, startups, small-medium apps.</li>
+                        <li><strong>MobX</strong> → If you like reactive programming style.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer position-relative light-background">
+        <div class="container">
+            <h3 class="sitename">Mohamed Yaser</h3>
+            <p>Flutter Developer passionate about crafting sleek, high-performance mobile apps 🚀
+                Let’s build something amazing together!</p>
+            <div class="social-links d-flex justify-content-center">
+                <a href="https://github.com/mohamed0yaser" target="_blank"><i class="bi bi-github"></i></a>
+                <a href="https://api.whatsapp.com/send/?phone=%2B201092833551" target="_blank"><i
+                        class="bi bi-whatsapp"></i></a>
+                <a href="https://medium.com/@mohamedyaser2023" target="_blank"><i class="bi bi-medium"></i></a>
+                <a href="https://www.linkedin.com/in/mohamed-yaser-2141a21b2/" target="_blank"><i
+                        class="bi bi-linkedin"></i></a>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <span>Copyright</span> <strong class="px-1 sitename">MYR</strong> <span>All Rights Reserved</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
