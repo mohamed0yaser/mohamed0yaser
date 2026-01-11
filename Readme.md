@@ -65,7 +65,9 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mohamed0yaser&layout=compact&theme=tokyonight" height="180"/>
 </p>
 
-
+<a href="https://github.com/ashutosh00710/github-readme-activity-graph">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=mohamed0yaser&bg_color=0d1117&color=ffffff&line=4db8ff&point=fff7e0&area=true&hide_border=true" alt="activity graph"/>
+</a>
 
 ---
 
